@@ -3,11 +3,11 @@ package com.company;
 import java.util.*;
 import java.util.function.Consumer;
 
-public class MailService<T> implements Consumer<Sendable<T>> {
+public class MailService<T> implements Consumer<Manageable<T>> {
     private Map<String, List<T>> listMap = new HashMap<>();
 
     @Override
-    public void accept(Sendable<T> sendable) {
+    public void accept(Manageable<T> sendable) {
         try {
             if (sendable != null) {
                 List<T> elements =
@@ -17,7 +17,7 @@ public class MailService<T> implements Consumer<Sendable<T>> {
                 listMap.put(sendable.getKeyForMailService(), elements);
             }
         } catch (Exception ex) {
-            System.err.println(ex);
+            ex.printStackTrace();
         }
     }
 
@@ -25,3 +25,4 @@ public class MailService<T> implements Consumer<Sendable<T>> {
         return listMap;
     }
 }
+
