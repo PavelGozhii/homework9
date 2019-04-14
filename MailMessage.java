@@ -1,10 +1,10 @@
 package com.company;
 
-public class MailMessage implements Sendable<String> {
+public class MailMessage implements Manageable<String> {
 
-    private String from;
-    private String to;
-    private String content;
+    private final String from;
+    private final  String to;
+    private final String content;
 
     public MailMessage(String from, String to, String content) {
         this.from = from;
