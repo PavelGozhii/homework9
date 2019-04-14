@@ -1,6 +1,6 @@
 package com.company;
 
-public interface Sendable<T> {
+public interface Manageable<T> {
     String getKeyForMailService();
 
     T getValueForMailService();
